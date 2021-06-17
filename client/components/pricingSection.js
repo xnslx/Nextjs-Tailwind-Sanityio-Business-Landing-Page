@@ -5,14 +5,27 @@ import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../client";
 
 const builder = imageUrlBuilder(sanityClient);
+const { projectId, dataset } = sanityClient.config();
 
 const PricingSection = ({ data }) => {
+  console.log("pricing", data);
   const [item] = data;
   const { heading, label, subheading, pricingchoose } = item;
+
+  const serializers = {
+    types: {
+      code: (props) => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      ),
+    },
+  };
+  console.log("serializers", serializers);
   return (
-    <div>
+    <div className="mt-36">
       <div>
-        <h3 className="text-2xl text-center text-gray-900 font-semibold mt-20">
+        <h3 className="text-2xl text-center text-gray-900 font-semibold">
           {heading}
         </h3>
         <h3 className="mt-2 text-center text-gray-070 text-center ml-auto mr-auto">
@@ -22,25 +35,28 @@ const PricingSection = ({ data }) => {
           {label}
         </p>
       </div>
-      <div>
+      <div className=" mt-8 mb-8 w-4/5 ml-auto mr-auto">
         {pricingchoose.map((pc) => (
-          <>
-            <img src={builder.image(pc.icon.asset._ref).width(48)} />
-            <p>{pc.chooselabel}</p>
-            <h2>{pc.price}</h2>
-            <hr></hr>
-            {/* <BlockContent
+          <div className="border border-black shadow-offset-black mb-8">
+            <div className="p-4 flex flex-col">
+              <img src={builder.image(pc.icon.asset._ref)} />
+              <p className="text-green text-sm uppercase">{pc.chooselabel}</p>
+              <h2 className="text-4xl font-bold">{pc.price}</h2>
+              <hr></hr>
+            </div>
+            <BlockContent
               blocks={pc.text}
               serializers={serializers}
               projectId={projectId}
               dataset={dataset}
-            /> */}
-            {/* <div>
-              {pc.ctas.map((cta) => (
-                <Cta {...cta} key={cta._key} />
-              ))}
-            </div> */}
-          </>
+              className="p-4"
+            />
+            {pc.ctas.map((cta) => (
+              <button className="p-4 text-green font-semibold">
+                {cta.linkText}
+              </button>
+            ))}
+          </div>
         ))}
       </div>
     </div>
