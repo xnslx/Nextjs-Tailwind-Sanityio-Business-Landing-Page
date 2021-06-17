@@ -2,4 +2,8 @@
 
 @tailwind base;
 @tailwind components;
+body {
+    @apply bg-yellow;
+}
+
 @tailwind utilities;

@@ -9,6 +9,13 @@ module.exports = {
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                yellow: "#f9f4e7",
+                green: "#7cc999",
+            },
+            boxShadow: {
+                "offset-black": "4px 4px black",
+            },
         },
     },
     variants: {

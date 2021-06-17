@@ -2,6 +2,9 @@ import Head from "next/head";
 import { sanityClient } from "../client";
 import Hero from "../components/hero";
 import CompanySection from "../components/companySection";
+import ServiceSection from "../components/serviceSection";
+import ProgressSectinon from "../components/progressSection";
+import PricingSection from "../components/pricingSection";
 
 function Home({ data }) {
   console.log(data);
@@ -9,6 +12,9 @@ function Home({ data }) {
   const { content } = item;
   const heroDataArray = [];
   const companyDataArray = [];
+  const serviceDataArray = [];
+  const progressDataArray = [];
+  const pricingDataArray = [];
 
   const heroData = content.map((ct) => {
     if (ct._type == "hero") {
@@ -24,12 +30,34 @@ function Home({ data }) {
     }
   });
 
-  console.log("companyDataArray", companyDataArray);
+  const serviceData = content.map((ct) => {
+    if (ct._type == "serviceSection") {
+      serviceDataArray.push(ct);
+      return serviceDataArray;
+    }
+  });
+
+  const progressData = content.map((ct) => {
+    if (ct._type == "progressSection") {
+      progressDataArray.push(ct);
+      return progressDataArray;
+    }
+  });
+
+  const pricingData = content.map((ct) => {
+    if (ct._type == "pricingSection") {
+      pricingDataArray.push(ct);
+      return pricingDataArray;
+    }
+  });
 
   return (
     <div className="">
       <Hero data={heroDataArray} />
       <CompanySection data={companyDataArray} />
+      <ServiceSection data={serviceDataArray} />
+      <ProgressSectinon data={progressDataArray} />
+      <PricingSection data={pricingDataArray} />
     </div>
   );
 }
