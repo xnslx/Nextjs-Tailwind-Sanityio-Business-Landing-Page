@@ -19,6 +19,7 @@ import figure from "./figure";
 import route from "./route";
 import simplePortableText from "./simplePortableText";
 import siteConfig from "./siteConfig";
+import contact from "./contact";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,12 +36,13 @@ export default createSchema({
         progressSection,
         pricingSection,
         portableText,
+        contact,
         // link,
         // internalLink,
         // embedHTML,
         // figure,
-        // route,
+        route,
         // simplePortableText,
-        // siteConfig,
+        siteConfig,
     ]),
 });

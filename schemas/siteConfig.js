@@ -79,7 +79,7 @@ export default {
         },
         {
             name: "footerText",
-            type: "simplePortableText",
+            type: "portableText",
             fieldset: "footer",
         },
     ],
