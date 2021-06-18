@@ -5,6 +5,7 @@ import CompanySection from "../components/companySection";
 import ServiceSection from "../components/serviceSection";
 import ProgressSectinon from "../components/progressSection";
 import PricingSection from "../components/pricingSection";
+import Layout from "../components/layout";
 
 function Home({ data }) {
   console.log(data);
@@ -53,6 +54,7 @@ function Home({ data }) {
 
   return (
     <div className="">
+      <Layout />
       <Hero data={heroDataArray} />
       <CompanySection data={companyDataArray} />
       <ServiceSection data={serviceDataArray} />

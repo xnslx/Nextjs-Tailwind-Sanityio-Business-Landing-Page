@@ -25,7 +25,7 @@ const ServiceSection = ({ data }) => {
                 src={builder.image(service.image.asset._ref).width(320)}
                 className="ml-auto mr-auto mt-8"
               />
-              <h4 className="text-lg text-center text-green font-semibold">
+              <h4 className="text-2xl text-center text-green font-semibold">
                 {service.subheading}
               </h4>
               <p className="text-base text-center text-gray-500 font-base w-2/3 text-center ml-auto mr-auto">
