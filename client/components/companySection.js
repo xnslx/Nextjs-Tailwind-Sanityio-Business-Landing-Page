@@ -10,7 +10,7 @@ const CompanySection = ({ data }) => {
     <div className="mt-36">
       {data.map((dt) => (
         <div>
-          <h3 className="text-2xl text-center text-gray-900 font-semibold mt-20">
+          <h3 className="text-4xl text-center text-gray-900 font-semibold mt-20">
             {dt.heading}
           </h3>
           <p className="text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">

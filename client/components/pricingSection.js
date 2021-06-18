@@ -25,7 +25,7 @@ const PricingSection = ({ data }) => {
   return (
     <div className="mt-36">
       <div>
-        <h3 className="text-2xl text-center text-gray-900 font-semibold">
+        <h3 className="text-4xl text-center text-gray-900 font-semibold">
           {heading}
         </h3>
         <h3 className="mt-2 text-center text-gray-070 text-center ml-auto mr-auto">

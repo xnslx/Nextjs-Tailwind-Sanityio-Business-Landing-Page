@@ -9,8 +9,8 @@ function HamburgerIcon(props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      width="1em"
-      height="1em"
+      width="2em"
+      height="2em"
       {...props}
     >
       <path d="M5 7.5H20" stroke="currentColor" style={strokeStyle} />{" "}

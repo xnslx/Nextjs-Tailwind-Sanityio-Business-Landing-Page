@@ -1,6 +1,7 @@
 import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../client";
+import CircleIcon from "./ui/Circle";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -11,33 +12,33 @@ const ServiceSection = ({ data }) => {
   const { heading, label, services } = item;
   return (
     <div className="mt-36">
-      <h3 className="text-2xl text-center text-gray-900 font-semibold mt-20">
+      <h3 className="text-4xl text-center text-gray-900 font-semibold mt-20">
         {heading}
       </h3>
       <p className="text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">
         {label}
       </p>
-      <div>
-        <ul>
+      <div className="mt-12">
+        <div className="">
           {services.map((service) => (
             <>
               <img
                 src={builder.image(service.image.asset._ref).width(320)}
                 className="ml-auto mr-auto mt-8"
               />
-              <h4 className="text-2xl text-center text-green font-semibold">
+              <h4 className="mt-8 text-2xl text-center text-gray-900 font-semibold">
                 {service.subheading}
               </h4>
-              <p className="text-base text-center text-gray-500 font-base w-2/3 text-center ml-auto mr-auto">
+              <p className="text-base text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">
                 {service.sublabel}
               </p>
-              <div>
+              <div className="mt-12">
                 {service.everyservice.map((i) => (
                   <>
-                    <h4 className="mt-8 text-lg font-medium text-center text-gray-900">
+                    <h4 className="mt-8 text-lg text-center text-green">
                       {i.everylabel}
                     </h4>
-                    <p className="text-base text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">
+                    <p className="text-base text-center text-gray-700 w-2/3 text-center ml-auto mr-auto">
                       {i.text}
                     </p>
                   </>
@@ -45,7 +46,7 @@ const ServiceSection = ({ data }) => {
               </div>
             </>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

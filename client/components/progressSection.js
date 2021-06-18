@@ -11,7 +11,7 @@ const ProgressSection = ({ data }) => {
   const { heading, label, steps } = item;
   return (
     <div className="mt-36">
-      <h3 className="text-2xl text-center text-gray-900 font-semibold">
+      <h3 className="text-4xl text-center text-gray-900 font-semibold">
         {heading}
       </h3>
       <p className="text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">

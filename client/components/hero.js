@@ -8,7 +8,7 @@ const Hero = ({ data }) => {
   console.log("hero", data);
 
   return (
-    <div className="">
+    <div className="mt-8">
       {data.map((dt, index) => (
         <div key={index} className="lg:flex flex-row-reverse">
           <img

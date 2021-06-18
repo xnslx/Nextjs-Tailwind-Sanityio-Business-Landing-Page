@@ -25,6 +25,9 @@ const Layout = () => {
       {layoutData.map((dt) => (
         <>
           <img src={builder.image(dt.logo.asset._ref).width(56)} />
+          <button className="absolute right-0 mr-8 -mt-8">
+            <HamburgerIcon />
+          </button>
           {/* <ul className="lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14">
             {dt.mainNavigation.map((i) => (
               <li>{i}</li>
