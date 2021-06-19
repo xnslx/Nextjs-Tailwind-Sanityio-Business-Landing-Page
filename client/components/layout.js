@@ -8,6 +8,7 @@ const builder = imageUrlBuilder(sanityClient);
 const Layout = () => {
   const [layoutData, setLayoutData] = useState([]);
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     sanityClient
       .fetch(`*[_type == "site-config"]`)
@@ -20,19 +21,28 @@ const Layout = () => {
       });
   }, []);
 
+  const menuToggleHandler = (e) => {
+    setOpen(!open);
+  };
+
   return (
     <div className="ml-4 mt-4 lg:flex lg:flex-row lg:ml-12 lg:mt-8">
       {layoutData.map((dt) => (
         <>
           <img src={builder.image(dt.logo.asset._ref).width(56)} />
-          <button className="absolute right-0 mr-8 -mt-8">
+          <button
+            onClick={menuToggleHandler}
+            className="absolute right-0 mr-8 -mt-8 lg:hidden"
+          >
             <HamburgerIcon />
           </button>
-          {/* <ul className="lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14">
-            {dt.mainNavigation.map((i) => (
-              <li>{i}</li>
-            ))}
-          </ul> */}
+          {open ? (
+            <ul className="flex flex-col w-4/5 ml-auto mr-auto text-center mt-4 lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14">
+              {dt.mainNavigation.map((i) => (
+                <li className="py-1 hover:bg-green rounded">{i}</li>
+              ))}
+            </ul>
+          ) : null}
         </>
       ))}
     </div>
