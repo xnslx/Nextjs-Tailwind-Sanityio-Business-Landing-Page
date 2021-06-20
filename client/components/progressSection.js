@@ -22,7 +22,7 @@ const ProgressSection = ({ data }) => {
           <div className=" mb-4 border border-black rounded rounded-2 shadow-offset-black flex flex-row lg:flex-col lg:h-40 lg:w-56">
             <img
               src={builder.image(step.image.asset._ref).width(56)}
-              className="object-contain lg:w-12"
+              className="object-contain lg:w-12 lg:m-4"
             />
             <div className="ml-4">
               <h3 className="font-medium">{step.subheading}</h3>

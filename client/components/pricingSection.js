@@ -35,13 +35,16 @@ const PricingSection = ({ data }) => {
           {label}
         </p>
       </div>
-      <div className=" mt-8 mb-8 w-4/5 ml-auto mr-auto">
+      <div className=" mt-8 mb-8 w-4/5 ml-auto mr-auto lg:w-5/6 lg:flex flex-row lg:justify-around">
         {pricingchoose.map((pc) => (
           <div className="border border-black shadow-offset-black mb-8">
-            <div className="p-4 flex flex-col">
-              <img src={builder.image(pc.icon.asset._ref)} />
+            <div className="p-4 flex flex-col lg:h-96 ">
+              <img
+                src={builder.image(pc.icon.asset._ref)}
+                className="lg:h-64 lg:w-96"
+              />
               <p className="text-green text-sm uppercase">{pc.chooselabel}</p>
-              <h2 className="text-4xl font-bold">{pc.price}</h2>
+              <h2 className="text-4xl font-bold lg:py-4">{pc.price}</h2>
               <hr></hr>
             </div>
             <BlockContent

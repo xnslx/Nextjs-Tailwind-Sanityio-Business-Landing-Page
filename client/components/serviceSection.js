@@ -18,7 +18,7 @@ const ServiceSection = ({ data }) => {
       <p className="text-center text-gray-500 w-2/3 text-center ml-auto mr-auto">
         {label}
       </p>
-      <div className="mt-12">
+      <div className="mt-8">
         <div className="">
           {services.map((service) => (
             <div className="lg:flex lg:flex-row lg:even:flex-row-reverse lg:even:w-11/12 ml-auto mr-auto mt-8">

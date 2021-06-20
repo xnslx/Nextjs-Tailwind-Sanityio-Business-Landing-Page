@@ -36,15 +36,19 @@ const Layout = () => {
           >
             <HamburgerIcon />
           </button>
-          {open ? (
-            <ul className="flex flex-col w-4/5 ml-auto mr-auto text-center mt-4 lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14">
-              {dt.mainNavigation.map((i, index) => (
-                <li key={index} className="py-1 hover:bg-green rounded">
-                  {i}
-                </li>
-              ))}
-            </ul>
-          ) : null}
+
+          <ul
+            className={`
+            flex flex-col w-4/5 ml-auto mr-auto text-center mt-4 lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14
+            lg:flex ${open ? "block" : "hidden"}
+          `}
+          >
+            {dt.mainNavigation.map((i, index) => (
+              <li key={index} className="py-1 hover:bg-green rounded">
+                {i}
+              </li>
+            ))}
+          </ul>
         </>
       ))}
     </div>
