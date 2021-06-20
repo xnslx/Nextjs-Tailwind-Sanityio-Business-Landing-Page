@@ -44,7 +44,7 @@ const Layout = () => {
           `}
           >
             {dt.mainNavigation.map((i, index) => (
-              <li key={index} className="py-1 hover:bg-green rounded">
+              <li key={index} className="p-2 hover:bg-green rounded">
                 {i}
               </li>
             ))}
