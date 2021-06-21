@@ -8,7 +8,6 @@ import PricingSection from "../components/pricingSection";
 import Layout from "../components/layout";
 
 function Home({ data }) {
-  console.log(data);
   const [item] = data;
   const { content } = item;
   const heroDataArray = [];

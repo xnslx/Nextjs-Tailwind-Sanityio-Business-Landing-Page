@@ -13,7 +13,6 @@ const Layout = () => {
     sanityClient
       .fetch(`*[_type == "site-config"]`)
       .then((data) => {
-        console.log("layout", data);
         setLayoutData(data);
       })
       .catch((err) => {
@@ -27,8 +26,8 @@ const Layout = () => {
 
   return (
     <div className="ml-4 mt-4 lg:flex lg:flex-row lg:ml-12 lg:mt-8">
-      {layoutData.map((dt) => (
-        <>
+      {layoutData.map((dt, index) => (
+        <div key={index}>
           <img src={builder.image(dt.logo.asset._ref).width(56)} />
           <button
             onClick={menuToggleHandler}
@@ -49,7 +48,7 @@ const Layout = () => {
               </li>
             ))}
           </ul>
-        </>
+        </div>
       ))}
     </div>
   );

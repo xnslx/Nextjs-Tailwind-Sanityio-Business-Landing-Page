@@ -8,7 +8,6 @@ const builder = imageUrlBuilder(sanityClient);
 const { projectId, dataset } = sanityClient.config();
 
 const PricingSection = ({ data }) => {
-  console.log("pricing", data);
   const [item] = data;
   const { heading, label, subheading, pricingchoose } = item;
 
@@ -21,7 +20,7 @@ const PricingSection = ({ data }) => {
       ),
     },
   };
-  console.log("serializers", serializers);
+
   return (
     <div className="mt-36">
       <div>
@@ -36,8 +35,11 @@ const PricingSection = ({ data }) => {
         </p>
       </div>
       <div className=" mt-8 mb-8 w-4/5 ml-auto mr-auto lg:w-5/6 lg:flex flex-row lg:justify-around">
-        {pricingchoose.map((pc) => (
-          <div className="border border-black shadow-offset-black mb-8">
+        {pricingchoose.map((pc, index) => (
+          <div
+            key={index}
+            className="border border-black shadow-offset-black mb-8"
+          >
             <div className="p-4 flex flex-col lg:h-96 ">
               <img
                 src={builder.image(pc.icon.asset._ref)}
@@ -54,8 +56,8 @@ const PricingSection = ({ data }) => {
               dataset={dataset}
               className="p-4"
             />
-            {pc.ctas.map((cta) => (
-              <button className="p-4 text-green font-semibold">
+            {pc.ctas.map((cta, index) => (
+              <button key={index} className="p-4 text-green font-semibold">
                 {cta.linkText}
               </button>
             ))}

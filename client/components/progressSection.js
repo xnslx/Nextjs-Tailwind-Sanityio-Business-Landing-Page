@@ -6,9 +6,9 @@ import { sanityClient } from "../client";
 const builder = imageUrlBuilder(sanityClient);
 
 const ProgressSection = ({ data }) => {
-  console.log("progress", data);
   const [item] = data;
   const { heading, label, steps } = item;
+
   return (
     <div className="mt-36">
       <h3 className="text-4xl text-center text-gray-900 font-semibold">
@@ -18,8 +18,11 @@ const ProgressSection = ({ data }) => {
         {label}
       </p>
       <div className="flex flex-col w-4/5 ml-auto mr-auto mt-8 lg:flex-row lg:w-10/12 lg:flex-wrap lg:gap-x-12 lg:justify-center">
-        {steps.map((step) => (
-          <div className=" mb-4 border border-black rounded rounded-2 shadow-offset-black flex flex-row lg:flex-col lg:h-40 lg:w-56">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className=" mb-4 border border-black rounded rounded-2 shadow-offset-black flex flex-row lg:flex-col lg:h-40 lg:w-56"
+          >
             <img
               src={builder.image(step.image.asset._ref).width(56)}
               className="object-contain lg:w-12 lg:m-4"

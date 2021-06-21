@@ -5,8 +5,6 @@ import { sanityClient } from "../client";
 const builder = imageUrlBuilder(sanityClient);
 
 const Hero = ({ data }) => {
-  console.log("hero", data);
-
   return (
     <div className="mt-8">
       {data.map((dt, index) => (
