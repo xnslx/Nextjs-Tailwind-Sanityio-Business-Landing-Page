@@ -25,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="ml-4 mt-4 lg:flex lg:flex-row lg:ml-12 lg:mt-8">
+    <div className="ml-4 mt-4 lg:flex lg:flex-row lg:ml-12">
       {layoutData.map((dt, index) => (
         <div key={index}>
           <img src={builder.image(dt.logo.asset._ref).width(56)} />
@@ -38,7 +38,7 @@ const Layout = () => {
 
           <ul
             className={`
-            flex flex-col w-4/5 ml-auto mr-auto text-center mt-4 lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:p-4 lg:justify-around lg:mr-14
+            flex flex-col w-4/5 ml-auto mr-auto text-center mt-4 lg:flex lg:flex-row lg:absolute lg:w-2/3 lg:right-0 lg:justify-around lg:mr-14 lg: -mt-8
             lg:flex ${open ? "block" : "hidden"}
           `}
           >
